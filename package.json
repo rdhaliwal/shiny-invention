@@ -1,0 +1,14 @@
+{
+  "name": "react-from-scratch",
+  "version": "1.0.0",
+  "description": "Build a react app from scratch",
+  "author": "Randeep Dhaliwal",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "webpack": "^2.4.1"
+  },
+  "scripts": {
+    "build": "webpack --config config/webpack.config.js"
+  }
+}

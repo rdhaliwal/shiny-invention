@@ -13,3 +13,4 @@ vendor
 .vscode/
 
 TODO.md
+dist/
