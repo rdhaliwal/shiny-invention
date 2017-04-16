@@ -8,4 +8,6 @@
  - run `yarn install`
  - run `yarn build`
 
- 
+## Run:
+ - run `yarn run`
+ - Open `localhost:8080` in your browser of choice 
