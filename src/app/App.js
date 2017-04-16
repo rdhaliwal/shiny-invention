@@ -1,4 +1,7 @@
-// This will be the main file.
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-console.log("Hello world!");
-console.log([1,2,3,4].map(p => p*p));
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);
