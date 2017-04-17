@@ -4,6 +4,7 @@
   "description": "Build a react app from scratch",
   "author": "Randeep Dhaliwal",
   "dependencies": {
+    "normalize.css": "^6.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
