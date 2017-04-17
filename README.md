@@ -9,5 +9,6 @@
  - run `yarn build`
 
 ## Run:
- - run `yarn run`
+ - run `yarn start` 
  - Open `localhost:8080` in your browser of choice 
+ - run `yarn watch` in another terminal window f you want webpack to watch and automatically rerun on change 

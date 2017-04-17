@@ -8,3 +8,13 @@ html {
 .Body {
   padding: 20px;
 }
+
+.HouseContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.House {
+  padding: 10px;
+}
