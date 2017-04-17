@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HouseContainer from 'app/HouseContainer';
+import styles from 'styles/main';
 
 export default class App extends React.Component {
   constructor(props) {
