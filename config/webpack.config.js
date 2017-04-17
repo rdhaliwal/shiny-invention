@@ -21,7 +21,19 @@ module.exports = {
       { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, use: 'babel-loader', exclude: /node_modules/ },
       { test: /\.css$/, use: 'css-loader'},
-      { test: /\.scss$/, use: ExtractTextPlugin.extract({use: ['css-loader', 'sass-loader']})}
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'sass-loader']}
+          )
+      },
+      {
+        test: /\.(jpeg|jpg|png|svg|gif|ttf|woff)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[name].[hash].[ext]',
+        },
+      }
     ]
   },
   plugins: [
