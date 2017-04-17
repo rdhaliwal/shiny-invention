@@ -16,7 +16,7 @@ I'm currently using:
 
 ## Run:
  - run `yarn start` 
- - Open `localhost:8080` in your browser of choice 
+ - Open `localhost:8080/dist/index.html` in your browser of choice 
  - run `yarn watch` in another terminal window if you want webpack to watch and automatically rerun on change 
 
 # Why?
