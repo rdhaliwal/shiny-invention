@@ -13,3 +13,7 @@ export default class House extends React.Component {
     );
   }
 }
+
+House.defaultProps = {
+  name: "No House"
+}
