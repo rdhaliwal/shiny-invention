@@ -19,8 +19,8 @@ export default class HouseContainer extends React.Component {
     let body = [];
     body = this.props.houseNames.map(h =>
       <div key={h.toLowerCase()}>
-        <Link to={`/${h.toLowerCase()}`}>{h}</Link>
-        <Route path={`/${h.toLowerCase()}`} render={props => <House name={h} {...props}/>} />
+        <Link to={`/app/${h.toLowerCase()}`}>{h}</Link>
+        <Route path={`/app/${h.toLowerCase()}`} render={props => <House name={h} {...props}/>} />
       </div>
     );
 
@@ -29,11 +29,14 @@ export default class HouseContainer extends React.Component {
         <img src={Dog} alt="I have no idea what I'm doing"/>
         {body}
         <div>
-          <Link to="/default">Default</Link>
-          <Route path="/default" render={props => <House {...props}/>} />
+          <Link to="/app/default">Default</Link>
+          <Route path="/app/default" render={props => <House {...props}/>} />
         </div>
       </div>
     );
   }
 }
 
+// HouseContainer.defaultProps = {
+//   houseNames: []
+// }

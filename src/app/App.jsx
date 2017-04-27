@@ -12,16 +12,18 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { houseNames: ["Gryffindor", "Ravenclaw", "Slytherin", "Hufflepuff"]};
+    this.state = { houseNames: ["Gryffindor", "Ravenclaw", "Slytherin", "Hufflepuff", "Thing"]};
   }
 
   render() {
     return (
       <Router>
-        <div>
-          <h1>Houses of Hogwarts</h1>
-          <HouseContainer houseNames={this.state.houseNames} />
-        </div>
+        <Route path="/app">
+          <div>
+            <h1>Housez of Hogwarts</h1>
+            <HouseContainer houseNames={this.state.houseNames} />
+          </div>
+        </Route>
       </Router>
     );
   }

@@ -4,6 +4,8 @@
   "description": "Build a react app from scratch",
   "author": "Randeep Dhaliwal",
   "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
     "normalize.css": "^6.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -23,12 +25,15 @@
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-hot-middleware": "^2.18.0"
   },
   "scripts": {
-    "compile": "webpack -p --config config/webpack.config.js",
-    "build": "webpack --config config/webpack.config.js",
-    "start": "webpack-dev-server --config config/webpack.config.js",
-    "watch": "webpack --watch --config config/webpack.config.js"
+    "compile": "NODE_ENV=development webpack -p --config config/webpack.config.js",
+    "build": "NODE_ENV=development webpack --config config/webpack.config.js",
+    "start": "NODE_ENV=development node app.js",
+    "start_old": "NODE_ENV=development webpack-dev-server --config config/webpack.config.js",
+    "watch": "NODE_ENV=development webpack --watch --config config/webpack.config.js"
   }
 }
