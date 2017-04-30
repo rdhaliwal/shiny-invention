@@ -12,7 +12,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { houseNames: ["Gryffindor", "Ravenclaw", "Slytherin", "Hufflepuff", "Thing"]};
+    this.state = { houseNames: ["Gryffindor", "Ravenclaw", "Slytherin", "Hufflepuff"]};
   }
 
   render() {
