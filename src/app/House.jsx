@@ -7,9 +7,12 @@ export default class House extends React.Component {
 
   render() {
     return (
-      <h2 className="House">
-        {this.props.name}
-      </h2>
+      <div className={`House House--${this.props.name.toLowerCase()}`}>
+        <h2 className="House-name">
+          {this.props.name}
+        </h2>
+        <div className="House-logo"></div>
+      </div>
     );
   }
 }

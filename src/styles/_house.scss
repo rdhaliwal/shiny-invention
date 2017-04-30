@@ -1,14 +1,130 @@
+$House-logoWidth: 250px;
+$House-logoHeight: 370px;
+
 .HouseContainer {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+}
+
+.HouseContainer-header {
+  flex: 0 0 auto;
+  padding: $pad;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: $Color-white;
+}
+
+.HouseContainer-heading {
+  display: inline-block;
+  margin: $pad;
+}
+
+.HouseContainer-logo {
+  width: 100px;
+  display: inline-block;
+}
+
+.HouseContainer-tabbar {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin: 0;
+  padding: 0 $pad*2;
+  background-color: $Color-mediumGrey;
 }
 
+.HouseContainer-tab {
+  padding: $pad*3;
+}
+
+.HouseContainer-viewContainer {
+  flex: 1 0 auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+// --------
+// House
+// --------
+
 .House {
+  flex: 1 0 auto;
+  height: 100%;
+  margin: 0;
+  padding: $pad*2;
+}
+
+.House.House--gryffindor {
+  background-color: $Color-gryffindorRed;
+  color: $Color-white;
+}
+
+.House.House--ravenclaw {
+  background-color: $Color-ravenclawBlue;
+  color: $Color-white;
+}
+
+.House.House--hufflepuff {
+  background-color: $Color-hufflepuffYellow;
+}
+
+.House.House--slytherin {
+  background-color: $Color-slytherinSilver;
+}
+
+.House-name {
+  margin: 0;
+  margin-bottom: $pad*2;
+  font-weight: 200;
+}
+
+.House-logo {
   padding: $pad;
   margin: 0;
-  background-image: url('~assets/space-dog.gif');
+}
+
+.House--gryffindor .House-logo {
+  background-image: url('~assets/hogwarts-houses.jpg');
+  width: $House-logoWidth;
+  height: $House-logoHeight;
+  background-position: 0 0;
+  border: 5px solid $Color-gryffindorGold;
+}
+
+.House--ravenclaw .House-logo {
+  background-image: url('~assets/hogwarts-houses.jpg');
+  width: $House-logoWidth;
+  height: $House-logoHeight;
+  background-position: 0 $House-logoHeight;
+  border: 5px solid $Color-ravenclawBronze;
+}
+
+.House--hufflepuff .House-logo {
+  background-image: url('~assets/hogwarts-houses.jpg');
+  width: $House-logoWidth;
+  height: $House-logoHeight;
+  background-position: $House-logoWidth 0;
+  border: 5px solid $Color-hufflepuffBlack;
+}
+
+.House--slytherin .House-logo {
+  background-image: url('~assets/hogwarts-houses.jpg');
+  width: $House-logoWidth;
+  height: $House-logoHeight;
+  background-position: $House-logoWidth $House-logoHeight;
+  border: 5px solid $Color-slytherinGreen;
 }
 
 .House--extraSpacing {

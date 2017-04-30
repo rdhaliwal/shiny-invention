@@ -1,11 +1,19 @@
-html { box-sizing: border-box; }
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
+html,
 .Body {
-  padding: $pad*2;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
+.Main {
+  height: 100%;
+}

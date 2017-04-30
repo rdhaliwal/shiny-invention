@@ -19,10 +19,7 @@ export default class App extends React.Component {
     return (
       <Router>
         <Route path="/app">
-          <div>
-            <h1>Housez of Hogwarts</h1>
-            <HouseContainer houseNames={this.state.houseNames} />
-          </div>
+          <HouseContainer houseNames={this.state.houseNames} />
         </Route>
       </Router>
     );
@@ -31,5 +28,5 @@ export default class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.getElementById('root')
+  document.getElementById('main')
 );
