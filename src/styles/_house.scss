@@ -42,6 +42,31 @@ $House-logoHeight: 370px;
   padding: $pad*3;
 }
 
+.HouseContainer-tab.is-selected {
+  background-color: $Color-lightGrey;
+  .HouseContainer-tabLink {color: $Color-black; }
+}
+
+.HouseContainer-tab.HouseContainer-tab--gryffindor.is-selected {
+  background-color: $Color-gryffindorRed;
+  .HouseContainer-tabLink {color: $Color-white; }
+}
+
+.HouseContainer-tab.HouseContainer-tab--ravenclaw.is-selected {
+  background-color: $Color-ravenclawBlue;
+  .HouseContainer-tabLink {color: $Color-white; }
+}
+
+.HouseContainer-tab.HouseContainer-tab--hufflepuff.is-selected {
+  background-color: $Color-hufflepuffYellow;
+  .HouseContainer-tabLink {color: $Color-black; }
+}
+
+.HouseContainer-tab.HouseContainer-tab--slytherin.is-selected {
+  background-color: $Color-slytherinSilver;
+  .HouseContainer-tabLink {color: $Color-black; }
+}
+
 .HouseContainer-viewContainer {
   flex: 1 0 auto;
   margin: 0;

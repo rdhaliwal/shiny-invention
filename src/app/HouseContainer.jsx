@@ -7,20 +7,22 @@ import {
 
 import HogwartsLogo from 'assets/hogwarts-logo.jpg';
 
-const TabBar = function(houseNames) {
+const Tab = ({tabKey, tabName, isActive, additionalClasses}) => (
+  <div className={`HouseContainer-tab ${isActive ? 'is-selected' : ''} ${additionalClasses}`}>
+    <Link to={`/app/${tabKey}`} className="HouseContainer-tabLink">{tabName}</Link>
+  </div>
+);
+
+const TabBar = function(houseNames, currentHouse) {
   let bar = houseNames.map(house =>
-    <div className={`HouseContainer-tab HouseContainer-tab--${house.toLowerCase()}`}
-         key={house.toLowerCase()}>
-      <Link to={`/app/${house.toLowerCase()}`} className={true ? 'is-selected' : ''}>
-        {house}
-      </Link>
-    </div>
+    <Tab key={house.toLowerCase()}
+         tabKey={house.toLowerCase()}
+         tabName={house}
+         isActive={currentHouse === house.toLowerCase()}
+         additionalClasses={`HouseContainer-tab--${house.toLowerCase()}`}/>
   );
 
-  bar.push(<div className="HouseContainer-tab" key="default">
-    <Link to="/app/default">Default</Link>
-  </div>);
-
+  bar.push(<Tab key='default' tabKey='default' tabName='default' isActive={currentHouse === 'default'} /> );
   return bar;
 };
 
@@ -37,7 +39,7 @@ export default class HouseContainer extends React.Component {
           <img src={HogwartsLogo} alt="Hogwarts" className="HouseContainer-logo"/>
         </div>
         <div className="HouseContainer-tabbar">
-          {TabBar(this.props.houseNames)}
+          {TabBar(this.props.houseNames, this.props.location.pathname.replace("/app/", ""))}
         </div>
         <div className="HouseContainer-viewContainer">
           <Route path={`${this.props.match.url}/:houseName`} component={House}/>
