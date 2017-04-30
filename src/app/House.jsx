@@ -7,9 +7,9 @@ export default class House extends React.Component {
 
   render() {
     return (
-      <div className={`House House--${this.props.name.toLowerCase()}`}>
+      <div className={`House House--${this.props.match.params.houseName}`}>
         <h2 className="House-name">
-          {this.props.name}
+          {this.props.match.params.houseName}
         </h2>
         <div className="House-logo"></div>
       </div>
@@ -18,5 +18,5 @@ export default class House extends React.Component {
 }
 
 House.defaultProps = {
-  name: "No House"
+  match: {params: {houseName: "No House"}}
 }

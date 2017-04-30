@@ -18,9 +18,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <Route path="/app">
-          <HouseContainer houseNames={this.state.houseNames} />
-        </Route>
+        <Route path="/app" render={props => <HouseContainer houseNames={this.state.houseNames} {...props}/>} />
       </Router>
     );
   }
