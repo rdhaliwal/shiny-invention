@@ -1,5 +1,5 @@
 import React from 'react';
-import House from 'app/House';
+import House from 'app/components/House';
 import {
   Route,
   Link

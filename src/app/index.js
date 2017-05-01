@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HouseContainer from 'app/HouseContainer';
-import styles from 'styles/main';
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
+import styles from 'styles/main';
+import HouseContainer from 'app/components/HouseContainer';
 
 export default class App extends React.Component {
   constructor(props) {
