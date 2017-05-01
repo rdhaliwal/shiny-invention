@@ -8,7 +8,7 @@ I'm currently using:
 
  - node v7.9.0
  - npm v4.2.0
- - yarn 0.19.1
+ - yarn 0.23.3
 
 ## Install:
  - run `yarn install`
