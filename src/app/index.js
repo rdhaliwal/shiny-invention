@@ -1,3 +1,4 @@
+// Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
@@ -5,8 +6,16 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import hogwartsApp from 'app/reducers'
+
+// Internal components
 import styles from 'styles/main';
 import HouseContainer from 'app/components/HouseContainer';
+
+// Initialise the Redux Store
+let store = createStore(hogwartsApp)
 
 export default class App extends React.Component {
   constructor(props) {
@@ -25,6 +34,9 @@ export default class App extends React.Component {
 }
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('main')
 );
+

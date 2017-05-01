@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import { ENROL_STUDENT, EXPELL_STUDENT } from './StudentActions'
-import { HIRE_TEACHER, FIRE_TEACHER } from './TeacherActions'
+import { ENROL_STUDENT, EXPELL_STUDENT } from 'app/actions/StudentActions'
+import { HIRE_TEACHER, FIRE_TEACHER } from 'app/actions/TeacherActions'
 
 
 function students(state = [], action) {
