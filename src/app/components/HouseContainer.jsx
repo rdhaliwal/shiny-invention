@@ -1,11 +1,12 @@
 import React from 'react';
-import House from 'app/components/House';
+import { connect } from 'react-redux'
 import {
   Route,
   Link
 } from 'react-router-dom'
-
+import House from 'app/components/House';
 import HogwartsLogo from 'assets/hogwarts-logo.jpg';
+
 
 const Tab = ({tabKey, tabName, isActive, additionalClasses}) => (
   <div className={`HouseContainer-tab ${isActive ? 'is-selected' : ''} ${additionalClasses}`}>
@@ -26,7 +27,7 @@ const TabBar = function(houseNames, currentHouse) {
   return bar;
 };
 
-export default class HouseContainer extends React.Component {
+class HouseContainer extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -48,3 +49,11 @@ export default class HouseContainer extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    students: state.students
+  }
+}
+
+export default connect(mapStateToProps)(HouseContainer)
