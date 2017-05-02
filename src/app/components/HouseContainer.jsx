@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import House from 'app/components/House';
 import HogwartsLogo from 'assets/hogwarts-logo.jpg';
+import { enrolStudent } from 'app/actions/StudentActions';
 
 
 const Tab = ({tabKey, tabName, isActive, additionalClasses}) => (
@@ -27,6 +28,16 @@ const TabBar = function(houseNames, currentHouse) {
   return bar;
 };
 
+const studentList = ({students}) => (
+  students.map(s => <li key={s}>{s}</li>)
+);
+
+const addStudent = (event) => {
+  if (event.value !== null) {
+    return enrolStudent("Ron Weasley")
+  }
+}
+
 class HouseContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -45,6 +56,13 @@ class HouseContainer extends React.Component {
         <div className="HouseContainer-viewContainer">
           <Route path={`${this.props.match.url}/:houseName`} component={House}/>
         </div>
+        <div className="HouseContainer-studentList">
+          Student List:
+          <ul>
+            {studentList(this.props)}
+          </ul>
+          <button onClick={this.props.preferredWayToAddStudentClick}>Add</button>
+        </div>
       </div>
     );
   }
@@ -56,4 +74,11 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(HouseContainer)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    preferredWayToAddStudentClick: (e) => dispatch(enrolStudent("Ron Weasley")),
+    oldWayToAddStudentClick: (e) => dispatch(addStudent(e))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HouseContainer)
