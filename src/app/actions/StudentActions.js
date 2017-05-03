@@ -11,7 +11,11 @@ export const EXPELL_STUDENT = 'EXPELL_STUDENT'
 
 export const enrolStudent = (name) => {
   let action = { type: ENROL_STUDENT, name: name }
-  if (name !== null) { return action; }
+  if (name !== null) {
+    return action;
+  } else {
+    return {type: ''}
+  }
 }
 
 export const expellStudent = (name) => {

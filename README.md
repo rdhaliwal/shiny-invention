@@ -19,6 +19,10 @@ I'm currently using:
  - Open `localhost:8080/dist/index.html` in your browser of choice 
  - run `yarn watch` in another terminal window if you want webpack to watch and automatically rerun on change 
 
+## Testing:
+ - run `yarn test`
+ - or run `yarn testw` to run it in watch mode (it'll stay alive, and rerun anytime you save a file)
+
 # Why?
 ## Why not use {{insert react boilerplate app name here}}?
 Because I need to learn how to use Webpack, Babel, (the newer version of) React, Redux and React Router. Doing things is the best way to learn things `¯\_(ツ)_/¯`
