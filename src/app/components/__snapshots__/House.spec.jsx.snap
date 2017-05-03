@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It renders the Gryffindor House Component 1`] = `
+<div
+  className="House House--Gryffindor"
+>
+  <h2
+    className="House-name"
+  >
+    Gryffindor
+  </h2>
+  <div
+    className="House-logo"
+  />
+</div>
+`;
+
+exports[`It renders the default House Component when no props are given 1`] = `
+<div
+  className="House House--No House"
+>
+  <h2
+    className="House-name"
+  >
+    No House
+  </h2>
+  <div
+    className="House-logo"
+  />
+</div>
+`;
