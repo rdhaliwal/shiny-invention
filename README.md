@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rdhaliwal/shiny-invention.svg?branch=master)](https://travis-ci.org/rdhaliwal/shiny-invention) 
+
 # What?
 ## What is this?
 It's my opinionated take on a boilerplate React/Webpack/Redux app. I plan on using it as a boilerplate for future projects. It's also my record of how to setup and configure these things; you'll see the commit notes are (kind of) detailed. It's my lazy way of writing a blog, but not.
