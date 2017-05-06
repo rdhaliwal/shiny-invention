@@ -11,9 +11,7 @@
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
-    "redux": "^3.6.0"
-  },
-  "devDependencies": {
+    "redux": "^3.6.0",
     "babel-core": "^6.24.1",
     "babel-jest": "^19.0.0",
     "babel-loader": "^6.4.1",
@@ -41,6 +39,7 @@
     "start_old": "NODE_ENV=development webpack-dev-server --config config/webpack.config.js",
     "watch": "NODE_ENV=development webpack --watch --config config/webpack.config.js",
     "test": "NODE_ENV=development jest --config=config/jest.config.js",
-    "testw": "NODE_ENV=development jest --watch --config=config/jest.config.js"
+    "testw": "NODE_ENV=development jest --watch --config=config/jest.config.js",
+    "postinstall" : "NODE_ENV=production webpack --config config/webpack.config.js -p"
   }
 }
