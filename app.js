@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const port = process.env.PORT || 3000;
 const app = express();
+const compression = require('compression');
 
 
 // ====================
@@ -28,26 +29,39 @@ const addDevMiddlewares = (app, webpackConfig) => {
   const fs = middleware.fileSystem;
 };
 
-const webpackConfig = require('./config/webpack.config.js');
-addDevMiddlewares(app, webpackConfig);
+addProdMiddlewares = (app, webpackConfig) => {
+  const publicPath = webpackConfig.output.publicPath || '/';
+  const outputPath = webpackConfig.output.path || path.resolve(process.cwd(), 'dist');
 
-// ==========
-// Routing
-// ==========
-// serve static assets normally
-// app.use(express.static(__dirname + '/dist'));
-app.use(express.static(webpackConfig.output.publicPath));
+  // compression middleware compresses your server responses which makes them
+  // smaller (applies also to assets). You can read more about that technique
+  // and other good practices on official Express.js docs http://mxs.is/googmy
+  app.use(compression());
+  app.use(publicPath, express.static(outputPath));
+};
 
-app.get('/', (request, response) => {
-  response.redirect('/app');
-});
+configureAppRoutes = (app, webpackConfig) => {
+  // serve static assets normally
+  app.use(express.static(webpackConfig.output.publicPath));
 
-app.get(['/app', '/app/*'], (request, response) => {
-  // here, i need to add a dist in here somehow???
-  // response.sendFile(path.resolve(webpackConfig.output.publicPath, 'index.html'))
-  response.sendFile(path.resolve(webpackConfig.output.path, 'index.html'))
-  // response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
-});
+  app.get('/', (request, response) => {
+    response.redirect('/app');
+  });
+
+  app.get(['/app', '/app/*'], (request, response) => {
+    response.sendFile(path.resolve(webpackConfig.output.path, 'index.html'))
+  });
+};
+
+if (process.env.NODE_ENV === 'production') {
+  const webpackConfig = require('./config/webpack.prod.config.js');
+  addProdMiddlewares(app, webpackConfig);
+  configureAppRoutes(app, webpackConfig);
+} else {
+  const webpackConfig = require('./config/webpack.config.js');
+  addDevMiddlewares(app, webpackConfig);
+  configureAppRoutes(app, webpackConfig);
+}
 
 app.listen(port);
 console.log("Server started on port: " + port);

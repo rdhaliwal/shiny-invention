@@ -17,9 +17,13 @@ I'm currently using:
  - run `yarn build`
 
 ## Run:
- - run `yarn start` 
- - Open `localhost:8080/dist/index.html` in your browser of choice 
+ - run `yarn dev` 
+ - Open `localhost:3000/dist/index.html` in your browser of choice 
  - run `yarn watch` in another terminal window if you want webpack to watch and automatically rerun on change 
+
+### Running in production:
+ - run `yarn compile` to build the minified/optimized assets
+ - run `yarn start`, with `NODE_ENV=production` set as an environment variable
 
 ## Test
 
@@ -46,7 +50,7 @@ The debugger can be a bit obtuse. Basic commands are:
 
 # Why?
 ## Why not use {{insert react boilerplate app name here}}?
-Why not? `¯\_(ツ)_/¯`
+`¯\_(ツ)_/¯`
  
 ## Why is it called `shiny-invention`?
 Because GitHub generates the best repository names.
