@@ -1,15 +1,18 @@
 language: node_js
-
 script:
-  - npm run test
-  - npm run build
-
+- npm run test
+- npm run build
 notifications:
   email:
     on_success: change
     on_failure: change
-
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: LdmOT1amSjtw5gRspMoYoNlf0dqHnS1ccC+cVvzrhPwibrfNW4SkSQ2AiwkDatNeYF9inrLnYRLmgtBzI3mkE8ccbtVlR6Qwg6WfihwM0l2q09Ks3yFQVSjfPdW3FZ4XhDXzE7243fjCPlEsxedJgjqU/24Ggn2GLe7PV74kiTbPvf4qQftNl/rw4FYP9XqJPfzv59QQovnog2ppgOg+E+3XIpNop6KOoEkkRup3rHsw5n1OjYHxkzRnqiigpVwwZ5dxUUnCUoEMwxvKaLguhsXVmm658DHehLGR0+F3MqesXMQrfP+LP3zopC18qhtRWoVrhbr+TSkF/5ipzFb9KtsWF4LhXX5+O791wTi8DpEE3MUZuxjPg+O90i2SxzsOjam9j/tF2f0IhAEX5j6rAWsUDnuJzvVwlqV4z7oQePFJmrXusJ79XkBOOSi6xc5huMq71cZVb8FUbDHzPFdQB9+uMpFwWphD/kEWwa8U2bVijXUWQhLtrDRY0HRhiZoqfPt6e8dH5A1EzOSe88dwFzbn1FvtN33NdztbKDf1Bb23iA2zUTKfUXQD/4crtPxRxTMhEGjBWyNhNn+u9Ywm5e/ILAv3DCJD1fd8UlgyynjjyTKui6sv9lyDkir3hCQBO1syulQJrxBZvJFbLt22weu3BDGC7DFE6/zgj8o3uoY=
+  app: rd-shiny-invention
+  on: stable
