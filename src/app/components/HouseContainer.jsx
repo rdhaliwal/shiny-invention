@@ -47,7 +47,11 @@ class HouseContainer extends React.Component {
     return (
       <div className="HouseContainer">
         <div className="HouseContainer-header">
-          <h1 className="HouseContainer-heading">Hogwarts School of Witchcraft and Wizadry</h1>
+          <h1 className="HouseContainer-heading">
+            Hogwarts:
+            <br/>
+            School of Witchcraft and Wizadry
+          </h1>
           <img src={HogwartsLogo} alt="Hogwarts" className="HouseContainer-logo"/>
         </div>
         <div className="HouseContainer-tabbar">
