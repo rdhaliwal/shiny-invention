@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It renders the HouseContainer 1`] = `
+<div
+  className="HouseContainer"
+>
+  <div
+    className="HouseContainer-header"
+  >
+    <h1
+      className="HouseContainer-heading"
+    >
+      Hogwarts:
+      <br />
+      School of Witchcraft and Wizadry
+    </h1>
+    <img
+      alt="Hogwarts"
+      className="HouseContainer-logo"
+      src="test-file-stub"
+    />
+  </div>
+  <div
+    className="HouseContainer-tabbar"
+  >
+    <div
+      className="HouseContainer-tab  HouseContainer-tab--one"
+    />
+    <div
+      className="HouseContainer-tab  HouseContainer-tab--two"
+    />
+    <div
+      className="HouseContainer-tab is-selected HouseContainer-tab--three"
+    />
+    <div
+      className="HouseContainer-tab  undefined"
+    />
+  </div>
+  <div
+    className="HouseContainer-viewContainer"
+  />
+  <div
+    className="HouseContainer-studentList"
+  >
+    Student List:
+    <ul>
+      <li>
+        Harry
+      </li>
+    </ul>
+    <button
+      onClick={undefined}
+    >
+      Add
+    </button>
+  </div>
+</div>
+`;

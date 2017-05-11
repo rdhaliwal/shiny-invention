@@ -38,7 +38,7 @@ const addStudent = (event) => {
   }
 }
 
-class HouseContainer extends React.Component {
+export class HouseContainer extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -65,7 +65,7 @@ class HouseContainer extends React.Component {
           <ul>
             {studentList(this.props)}
           </ul>
-          <button onClick={this.props.preferredWayToAddStudentClick}>Add</button>
+          <button ref="addStudent" onClick={this.props.preferredWayToAddStudentClick}>Add</button>
         </div>
       </div>
     );
