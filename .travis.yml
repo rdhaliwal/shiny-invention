@@ -4,11 +4,13 @@ script:
 - npm run build
 notifications:
   email:
-    on_success: change
-    on_failure: change
+    on_success: never
+    on_failure: never
   slack:
     rooms:
-      secure: XbYa01h4/qPBhMYgxxiyhhHmSt6KUSQWlyFBiolu+cfgC5xf+5q9qE0ygljlk5RrWjJopGD5jNpEOZoEvG/ifu+YzIb7Xc0AINtM8i9AfRTFTX8oKokkbIxOhjd6nDVgNNCDliVpudHnbuXKWnJPyZJb9fINiwvecuFS2bO1DrzFt3FgRbka5SVejZLfomwW0g+6ddtlJFPa1Bwjh8wkI6naIRFYW722tqRAK7QeJWpFibxSiS21sb8mDP50+MdzSm+tt6Zna1z9LLsQjr+VMnLpeyJnDoCvS7dMCZm8bcrvNXAo4m5rMSx5in0wALIFvZKo8U9SIyHKGMRoxQNo3KO4qdCSR1GLZx/NAt9caFOFjPLQQztMKYzV9+KMz1nS4uzRoHjs8qqoJ/n/pGMIghVETaxtIcqwML6MAsgxIW4wTA5ZVRd7Mz8Vxc5dLAfkCDlBhPlDjQ+kWgZF5YgwZxwV2IlMR46OsJKPh5Ew0KoFKvgyrONh520tkI1+nKjjq+fr3bEwH6fm09jSqytWxCLvsKczkfFQeNvvwweMRh8hG1Z8AFEm/9ZjOiEtyWYBoTpaJYJk4M4mPmYo0xu2w2QUVSk7mlkuKsMQbIJPbkIhen7anQ25v/XX+yWPK551/kMSV/PtuUzAVQaJ/vUjCca1R/DHPQpUS19gU/axKnc=
+      - secure: XbYa01h4/qPBhMYgxxiyhhHmSt6KUSQWlyFBiolu+cfgC5xf+5q9qE0ygljlk5RrWjJopGD5jNpEOZoEvG/ifu+YzIb7Xc0AINtM8i9AfRTFTX8oKokkbIxOhjd6nDVgNNCDliVpudHnbuXKWnJPyZJb9fINiwvecuFS2bO1DrzFt3FgRbka5SVejZLfomwW0g+6ddtlJFPa1Bwjh8wkI6naIRFYW722tqRAK7QeJWpFibxSiS21sb8mDP50+MdzSm+tt6Zna1z9LLsQjr+VMnLpeyJnDoCvS7dMCZm8bcrvNXAo4m5rMSx5in0wALIFvZKo8U9SIyHKGMRoxQNo3KO4qdCSR1GLZx/NAt9caFOFjPLQQztMKYzV9+KMz1nS4uzRoHjs8qqoJ/n/pGMIghVETaxtIcqwML6MAsgxIW4wTA5ZVRd7Mz8Vxc5dLAfkCDlBhPlDjQ+kWgZF5YgwZxwV2IlMR46OsJKPh5Ew0KoFKvgyrONh520tkI1+nKjjq+fr3bEwH6fm09jSqytWxCLvsKczkfFQeNvvwweMRh8hG1Z8AFEm/9ZjOiEtyWYBoTpaJYJk4M4mPmYo0xu2w2QUVSk7mlkuKsMQbIJPbkIhen7anQ25v/XX+yWPK551/kMSV/PtuUzAVQaJ/vUjCca1R/DHPQpUS19gU/axKnc=
+    on_success: change
+    on_failure: always
 cache:
   yarn: true
   directories:
