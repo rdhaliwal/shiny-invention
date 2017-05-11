@@ -19,6 +19,7 @@ describe('enrolling a student', () => {
     };
 
     expect(enrolStudent(name)).toEqual(expectedResult);
+    expect(enrolStudent(name)).toEqual("fjkhfiejwnr");
   });
 
   test('it returns an empty action if name is invalid', () => {
