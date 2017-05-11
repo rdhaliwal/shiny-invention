@@ -1,6 +1,7 @@
 {
   "verbose": true,
   "collectCoverage": true,
+  "coveragePathIgnorePatterns": ["/node_modules/", "/config/"],
   "moduleFileExtensions": ["js", "jsx"],
   "moduleDirectories": ["src", "node_modules", "config"],
   "moduleNameMapper": {

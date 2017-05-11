@@ -3,7 +3,7 @@ import { ENROL_STUDENT, EXPELL_STUDENT } from 'app/actions/StudentActions'
 import { HIRE_TEACHER, FIRE_TEACHER } from 'app/actions/TeacherActions'
 
 
-function students(state = ["Harry Potter"], action) {
+export function students(state = ["Harry Potter"], action={}) {
   switch (action.type) {
     case ENROL_STUDENT:
       return [...state, action.name]
@@ -14,7 +14,7 @@ function students(state = ["Harry Potter"], action) {
   }
 }
 
-function teachers(state = ["Albus Dumbledore"], action) {
+export function teachers(state = ["Albus Dumbledore"], action={}) {
   switch (action.type) {
     case HIRE_TEACHER:
       return [...state, action.name]
