@@ -14,8 +14,15 @@ import hogwartsApp from 'app/reducers'
 import styles from 'styles/main';
 import HouseContainer from 'app/components/HouseContainer';
 
-// Initialise the Redux Store
-let store = createStore(hogwartsApp)
+// Initialise the Redux Store (with or without DevTools)
+let store;
+if (PRODUCTION) {
+  store = createStore(hogwartsApp)
+} else {
+  store = createStore(hogwartsApp,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
+}
 
 export default class App extends React.Component {
   constructor(props) {
