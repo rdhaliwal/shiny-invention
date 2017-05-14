@@ -4,13 +4,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/app/index.js',
+  entry: ['babel-polyfill', './src/app/index.js'],
   output: {
     filename: 'bundle.js',
     path: path.resolve('dist'),
     publicPath: '/dist/'
   },
-  // devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
     modules: [
@@ -40,7 +39,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      PRODUCTION: JSON.stringify(true)
+      __PRODUCTION__: JSON.stringify(true)
     }),
     new ExtractTextPlugin('styles.css'),
     new HtmlWebpackPlugin({

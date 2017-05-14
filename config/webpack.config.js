@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/app/index.js',
+  entry: ['babel-polyfill', './src/app/index.js'],
   output: {
     filename: 'bundle.js',
     path: path.resolve('dist'),
@@ -40,7 +40,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      PRODUCTION: JSON.stringify(false)
+      __PRODUCTION__: JSON.stringify(false)
     }),
     new ExtractTextPlugin('styles.css'),
     new HtmlWebpackPlugin({

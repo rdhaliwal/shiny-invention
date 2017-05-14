@@ -6,8 +6,9 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import thunkMiddleware from 'redux-thunk'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
 import hogwartsApp from 'app/reducers'
 
 // Internal components
@@ -16,12 +17,12 @@ import HouseContainer from 'app/components/HouseContainer';
 
 // Initialise the Redux Store (with or without DevTools)
 let store;
-if (PRODUCTION) {
-  store = createStore(hogwartsApp)
+let middleware = applyMiddleware(thunkMiddleware);
+if (__PRODUCTION__) {
+  store = createStore(hogwartsApp, middleware);
 } else {
-  store = createStore(hogwartsApp,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
+  let devtools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+  store = createStore(hogwartsApp, compose(middleware, devtools));
 }
 
 export default class App extends React.Component {
