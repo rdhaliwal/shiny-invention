@@ -1,8 +1,14 @@
 import {
   ENROL_STUDENT,
-  enrolStudent,
   EXPELL_STUDENT,
-  expellStudent
+  FETCH_STUDENTS,
+  FETCH_STUDENTS_SUCCESS,
+  FETCH_STUDENTS_ERROR,
+  enrolStudent,
+  expellStudent,
+  fetchStudents,
+  fetchStudentsSuccess,
+  fetchStudentsError
 } from './StudentActions';
 
 describe('enrolling a student', () => {
@@ -27,13 +33,6 @@ describe('enrolling a student', () => {
 
     expect(enrolStudent(name)).toEqual(expectedResult);
   });
-
-  test.skip('it skips me, because reasons', () => {
-    let name = undefined;
-    let expectedResult = {type: ''};
-
-    expect(enrolStudent(name)).toEqual(expectedResult);
-  });
 });
 
 describe('expelling a student', () => {
@@ -45,6 +44,39 @@ describe('expelling a student', () => {
     };
 
     expect(expellStudent(name)).toEqual(expectedResult);
+  });
+});
+
+describe('fetching the student list', () => {
+  test('it returns an action', () => {
+    let expectedResult = {type: FETCH_STUDENTS };
+
+    expect(fetchStudents()).toEqual(expectedResult);
+  });
+});
+
+describe('successfully fetched the student list', () => {
+  test('it returns an action', () => {
+    let data = { students: "Harry Potter" };
+    let expectedResult = {
+      type: FETCH_STUDENTS_SUCCESS,
+      studentList: data.students
+    };
+
+    expect(fetchStudentsSuccess(data)).toEqual(expectedResult);
+  });
+});
+
+
+describe('failed to fetch the student list', () => {
+  test('it returns an action', () => {
+    let data = { responseCode: 500 };
+    let expectedResult = {
+      type: FETCH_STUDENTS_ERROR,
+      error: data.responseCode
+    };
+
+    expect(fetchStudentsError(data)).toEqual(expectedResult);
   });
 });
 

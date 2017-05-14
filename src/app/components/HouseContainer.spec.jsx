@@ -1,4 +1,4 @@
-// Link.react-test.js
+// Link.react-test-renderert.js
 import React from 'react';
 import { HouseContainer } from './HouseContainer';
 import renderer from 'react-test-renderer';
