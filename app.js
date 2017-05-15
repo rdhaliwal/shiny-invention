@@ -51,6 +51,19 @@ configureAppRoutes = (app, webpackConfig) => {
   app.get(['/app', '/app/*'], (request, response) => {
     response.sendFile(path.resolve(webpackConfig.output.path, 'index.html'))
   });
+
+  app.get('/api/harry_potter', (request, response) => {
+    // res.render('error', {message: 'Error because reasons', error: {} });
+    response.json({
+      "id":"harry_potter_character_list",
+      "students":[
+        "Harry Potter",
+        "Hermione Granger",
+        "Ron Weasley",
+        "Draco Malfoy",
+        "Ginny Weasley"
+    ]});
+  });
 };
 
 if (process.env.NODE_ENV === 'production') {

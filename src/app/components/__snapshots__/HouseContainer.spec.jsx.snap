@@ -51,7 +51,7 @@ exports[`It renders the HouseContainer 1`] = `
     <button
       onClick={undefined}
     >
-      Add
+      Fetch Student List with API Call
     </button>
   </div>
 </div>

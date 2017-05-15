@@ -36,7 +36,7 @@ test('It fires an action when clicked', () => {
     <HouseContainer {...props} preferredWayToAddStudentClick={addStudentClick} />
   );
 
-  const button = wrapper.ref('addStudent');
+  const button = wrapper.ref('fetchStudents');
   button.simulate('click');
   expect(addStudentClick).toHaveBeenCalled();
 });

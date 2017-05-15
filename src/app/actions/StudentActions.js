@@ -1,17 +1,10 @@
-/*
- * Action types
- */
+import fetch from 'isomorphic-fetch'
 
 export const ENROL_STUDENT =  'ENROL_STUDENT';
 export const EXPELL_STUDENT = 'EXPELL_STUDENT';
-
 export const FETCH_STUDENTS = 'FETCH_STUDENTS';
 export const FETCH_STUDENTS_SUCCESS = 'FETCH_STUDENTS_SUCCESS';
 export const FETCH_STUDENTS_ERROR = 'FETCH_STUDENTS_ERROR';
-
-/*
- * Action creators
- */
 
 export const enrolStudent = (name) => {
   let action = { type: ENROL_STUDENT, name: name }
@@ -26,7 +19,7 @@ export const expellStudent = (name) => {
   return { type: EXPELL_STUDENT, name: name }
 }
 
-export const fetchStudents = () => {
+export const fetchStudentsBegin = () => {
   return {
     type: FETCH_STUDENTS
   }
@@ -35,13 +28,35 @@ export const fetchStudents = () => {
 export const fetchStudentsSuccess = (data) => {
   return {
     type: FETCH_STUDENTS_SUCCESS,
-    studentList: data.students
+    students: data.students
   }
 }
 
 export const fetchStudentsError = (data) => {
   return {
     type: FETCH_STUDENTS_ERROR,
-    error: data.responseCode
+    error: `${data.code}: ${data.statusText}`
+  }
+}
+
+export const fetchStudents = () => {
+  return function (dispatch) {
+    dispatch(fetchStudentsBegin());
+
+    return fetch('http://localhost:3000/api/harry_potter', {
+      method: 'GET',
+      mode: 'cors',
+      headers:{'Access-Control-Allow-Origin':'*'}
+    }).then(response => {
+      let json = response.json();
+      if (response.ok) {
+        return json;
+      } else {
+        // Reject the promise if the response is a 500
+        return json.then(err => {throw err;});
+      }
+    })
+    .then (json => dispatch(fetchStudentsSuccess(json)))
+    .catch(json => dispatch(fetchStudentsError(json)));
   }
 }

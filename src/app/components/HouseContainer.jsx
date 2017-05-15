@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import House from 'app/components/House';
 import HogwartsLogo from 'assets/hogwarts-logo.jpg';
-import { enrolStudent } from 'app/actions/StudentActions';
+import { fetchStudents } from 'app/actions/StudentActions';
 
 
 const Tab = ({tabKey, tabName, isActive, additionalClasses}) => (
@@ -31,12 +31,6 @@ const TabBar = function(houseNames, currentHouse) {
 const studentList = ({students}) => (
   students.map(s => <li key={s}>{s}</li>)
 );
-
-const addStudent = (event) => {
-  if (event.value !== null) {
-    return enrolStudent("Ron Weasley")
-  }
-}
 
 export class HouseContainer extends React.Component {
   constructor(props) {
@@ -65,7 +59,7 @@ export class HouseContainer extends React.Component {
           <ul>
             {studentList(this.props)}
           </ul>
-          <button ref="addStudent" onClick={this.props.preferredWayToAddStudentClick}>Add</button>
+          <button ref="fetchStudents" onClick={this.props.preferredWayToAddStudentClick}>Fetch Student List with API Call</button>
         </div>
       </div>
     );
@@ -80,8 +74,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    preferredWayToAddStudentClick: (e) => dispatch(enrolStudent("Ron Weasley")),
-    oldWayToAddStudentClick: (e) => dispatch(addStudent(e))
+    preferredWayToAddStudentClick: (e) => dispatch(fetchStudents())
   }
 }
 

@@ -23,7 +23,7 @@ export function students(state=initialState.students, action={}) {
     case FETCH_STUDENTS:
       return state;
     case FETCH_STUDENTS_SUCCESS:
-      return [action.studentList];
+      return action.students;
     case FETCH_STUDENTS_ERROR:
       return state;
     default:
