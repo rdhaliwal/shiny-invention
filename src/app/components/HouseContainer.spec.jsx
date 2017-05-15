@@ -16,13 +16,29 @@ test('It renders the HouseContainer', () => {
     match: {url : "/app/"}
   }
 
+  const addStudentClick = jest.fn();
   const component = renderer.create(
-    <HouseContainer {...props} />
+    <HouseContainer {...props} refreshStudentList={addStudentClick} />
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
+
+// Functionality Tests
+test('It makes an action call to initialise the store', () => {
+  let props = {houseNames: ["one", "two", "three"],
+    students: ["Harry"],
+    location: {pathname: "/app/three"},
+    match: {url : "/app/"}
+  }
+  const addStudentClick = jest.fn();
+  const wrapper = mount(
+    <HouseContainer {...props} refreshStudentList={addStudentClick} />
+  );
+
+  expect(addStudentClick).toHaveBeenCalled();
+});
 
 // Functionality Tests
 test('It fires an action when clicked', () => {
@@ -33,9 +49,10 @@ test('It fires an action when clicked', () => {
   }
   const addStudentClick = jest.fn();
   const wrapper = mount(
-    <HouseContainer {...props} preferredWayToAddStudentClick={addStudentClick} />
+    <HouseContainer {...props} refreshStudentList={addStudentClick} />
   );
 
+  expect(addStudentClick).toHaveBeenCalled();
   const button = wrapper.ref('fetchStudents');
   button.simulate('click');
   expect(addStudentClick).toHaveBeenCalled();

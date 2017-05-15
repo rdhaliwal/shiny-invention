@@ -37,6 +37,10 @@ export class HouseContainer extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.refreshStudentList();
+  }
+
   render() {
     return (
       <div className="HouseContainer">
@@ -59,7 +63,7 @@ export class HouseContainer extends React.Component {
           <ul>
             {studentList(this.props)}
           </ul>
-          <button ref="fetchStudents" onClick={this.props.preferredWayToAddStudentClick}>Fetch Student List with API Call</button>
+          <button ref="fetchStudents" onClick={this.props.refreshStudentList}>Fetch Student List with API Call</button>
         </div>
       </div>
     );
@@ -74,7 +78,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    preferredWayToAddStudentClick: (e) => dispatch(fetchStudents())
+    refreshStudentList: (e) => dispatch(fetchStudents())
   }
 }
 

@@ -17,13 +17,13 @@ I'm currently using:
  - run `yarn build`
 
 ## Run:
- - run `yarn dev` 
- - Open `localhost:3000/dist/index.html` in your browser of choice 
- - run `yarn watch` in another terminal window if you want webpack to watch and automatically rerun on change 
+ - run `yarn start` 
+ - Open `localhost:3000/app` in your browser of choice 
 
 ### Running in production:
  - run `yarn compile` to build the minified/optimized assets
  - run `yarn start`, with `NODE_ENV=production` set as an environment variable
+   - or pass it in as an argument: `yarn start -- NODE_ENV=production` 
 
 ## Test
 
@@ -43,10 +43,12 @@ To debug a test, run: `node debug --harmony ./node_modules/.bin/jest --runInBand
 The debugger can be a bit obtuse. Basic commands are:
 
  - `n` for next
+ - `c` for continue
  - `eval` to a open a repl to evaluate variables
  - `ctrl-c` to close the repl 
- - `c` for continue
  - `ctrl-c ctrl-c` to quite debugger
+
+ If in doubt, `console.log` if your friend.
 
 # Why?
 ## Why not use {{insert react boilerplate app name here}}?

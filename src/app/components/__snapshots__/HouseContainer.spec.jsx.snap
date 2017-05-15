@@ -49,7 +49,7 @@ exports[`It renders the HouseContainer 1`] = `
       </li>
     </ul>
     <button
-      onClick={undefined}
+      onClick={[Function]}
     >
       Fetch Student List with API Call
     </button>
