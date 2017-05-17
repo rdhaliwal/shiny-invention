@@ -49,7 +49,11 @@ configureAppRoutes = (app, webpackConfig) => {
   });
 
   app.get(['/app', '/app/*'], (request, response) => {
-    response.sendFile(path.resolve(webpackConfig.output.path, 'index.html'))
+    response.sendFile(path.resolve(webpackConfig.output.path, 'index.html'));
+  });
+
+  app.get('/sw.js', (request, response) => {
+    response.sendFile(path.resolve(webpackConfig.output.path, 'sw.js'));
   });
 
   app.get('/api/harry_potter', (request, response) => {

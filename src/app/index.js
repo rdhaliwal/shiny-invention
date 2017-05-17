@@ -48,3 +48,13 @@ ReactDOM.render(
   document.getElementById('main')
 );
 
+
+// Initialise the Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(function(reg) {
+    console.log('◕‿◕', reg);
+  }, function(err) {
+    console.log('ಠ_ಠ', err);
+  });
+}
+

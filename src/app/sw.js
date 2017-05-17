@@ -1,3 +1,7 @@
-console.log([1,2,3].map(a => a*a));
+self.addEventListener('install', function(event) {
+  console.log("Service Worker installed");
+});
 
-
+self.addEventListener('activate', function(event) {
+  console.log("Service Worker activated");
+});
