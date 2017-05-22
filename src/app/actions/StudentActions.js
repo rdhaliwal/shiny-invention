@@ -1,4 +1,5 @@
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch';
+import { API_PATH } from 'app/utils/urls';
 
 export const ENROL_STUDENT =  'ENROL_STUDENT';
 export const EXPELL_STUDENT = 'EXPELL_STUDENT';
@@ -43,7 +44,7 @@ export const fetchStudents = () => {
   return function (dispatch) {
     dispatch(fetchStudentsBegin());
 
-    return fetch('/api/harry_potter', {
+    return fetch(`${API_PATH}/api/harry_potter`, {
       method: 'GET',
       mode: 'cors',
       headers:{'Access-Control-Allow-Origin':'*'}

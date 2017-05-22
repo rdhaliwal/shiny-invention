@@ -16,6 +16,8 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 const mockStore = configureMockStore([thunk]);
 import nock from 'nock';
+jest.mock('app/utils/urls', () => require('mockUrl'));
+const { API_PATH } = require('app/utils/urls');
 
 describe('enrolling a student', () => {
   it('should return an action if name is valid', () => {
@@ -90,7 +92,7 @@ describe('fetch the student list', () => {
 
   test('it dispatches a successful action', () => {
     let data = {students: ['Aberforth Dumbledore']};
-    nock('http://localhost:3000/')
+    nock(API_PATH)
       .get('/api/harry_potter')
       .reply(200, data)
 
@@ -108,7 +110,7 @@ describe('fetch the student list', () => {
 
   test('it dispatches a failed action', () => {
     let data = {code: 500, statusText: 'Oh teh noes! Internal Server Error'};
-    nock('http://localhost:3000/')
+    nock(API_PATH)
       .get('/api/harry_potter')
       .reply(500, data)
 
