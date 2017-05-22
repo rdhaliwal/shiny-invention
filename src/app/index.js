@@ -25,6 +25,7 @@ if (__PRODUCTION__) {
   store = createStore(hogwartsApp, compose(middleware, devtools));
 }
 
+// Initialise React
 export default class App extends React.Component {
   constructor(props) {
     super(props);

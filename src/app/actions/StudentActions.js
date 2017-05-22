@@ -43,7 +43,7 @@ export const fetchStudents = () => {
   return function (dispatch) {
     dispatch(fetchStudentsBegin());
 
-    return fetch('http://localhost:3000/api/harry_potter', {
+    return fetch('/api/harry_potter', {
       method: 'GET',
       mode: 'cors',
       headers:{'Access-Control-Allow-Origin':'*'}
