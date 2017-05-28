@@ -1,6 +1,8 @@
 var CACHE_NAME = 'shiny-invention-v1';
 var CACHE_ASSET_REGISTER = [
   '/app',
+  // '/dist/*'
+  // ,
   '/dist/app.js',
   '/dist/styles.css'
 ];

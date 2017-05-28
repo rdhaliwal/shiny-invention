@@ -1,0 +1,27 @@
+{
+  "short_name": "Shiny Invention",
+  "name": "Shiny Invention",
+  "background_color": "#CC0000",
+  "start_url": "/app",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#CC0000",
+  "icons": [
+    {
+      "src": "/dist/icon-48-48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/dist/icon-96-96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/dist/icon-192-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}
+
