@@ -8,9 +8,9 @@ It's my opinionated take on a boilerplate React/Webpack/Redux app. I plan on usi
 ## Environment:
 I'm currently using:
 
- - node v7.9.0
- - npm v4.2.0
- - yarn 0.23.3
+ - node v8.0.0
+ - npm v5.0.0
+ - yarn 0.24.6
 
 ## Install:
  - run `yarn install`
