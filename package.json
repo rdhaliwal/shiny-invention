@@ -4,8 +4,8 @@
   "description": "Build a react app from scratch",
   "author": "Randeep Dhaliwal",
   "engines": {
-    "node": "8.0.0",
-    "npm": "5.0.0"
+    "node": "8.1.4",
+    "npm": "5.0.3"
   },
   "dependencies": {
     "babel-core": "^6.24.1",
