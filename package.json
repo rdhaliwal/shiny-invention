@@ -1,7 +1,7 @@
 {
   "name": "shiny-invention",
   "version": "1.0.0",
-  "description": "Build a react app from scratch",
+  "description": "Building a react app from scratch",
   "author": "Randeep Dhaliwal",
   "engines": {
     "node": "8.1.4",
